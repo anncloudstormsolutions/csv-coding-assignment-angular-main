@@ -1,0 +1,15 @@
+button{
+  mix-blend-mode: normal;
+  border-radius: 3px;
+  color: #fff;
+  border: none;
+  margin-right: 16px;
+  min-width: 100px;
+  min-height: 35px;
+  &.cancel{
+    background: #d50000;
+  }
+  &.ok{
+    background: #00C1D5;
+  }
+}

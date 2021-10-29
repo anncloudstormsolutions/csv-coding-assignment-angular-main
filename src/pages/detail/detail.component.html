@@ -1,0 +1,22 @@
+
+<span class="back" [routerLink]="['/view']">Back</span>
+<h2>Task Detail</h2>
+
+<ng-container *ngIf="(task | async) as detail">
+    <div class="container">
+        <div><span>Id:</span> {{detail.id}}</div>
+        <div>
+            <span>Assignee: </span>
+            <select [(ngModel)]="detail.assigneeId">
+                <option *ngFor="let user of users|async" value="{{user.id}}" [selected]="user.id == detail.assigneeId">
+                    {{user.name}}</option>
+            </select>
+        </div>
+        <div>
+            <span>Description:</span><input type="text" [(ngModel)]="detail.description">
+        </div>
+        <div>
+            <button (click)="save(detail)">Save</button>
+        </div>
+    </div>
+</ng-container>
